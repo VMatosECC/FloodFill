@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="floodfillapp.FloodFillSceneController">
+   <children>
+      <BorderPane layoutY="5.0" prefHeight="393.0" prefWidth="601.0">
+         <center>
+            <GridPane fx:id="grid" prefHeight="393.0" prefWidth="384.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+            </GridPane>
+         </center>
+         <left>
+            <VBox prefHeight="393.0" prefWidth="158.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Flood Fill App">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Starting Cell">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Label>
+                  <Label fx:id="lblStartingCellColor" prefHeight="17.0" prefWidth="127.0" />
+                  <Label text="Row" />
+                  <TextField fx:id="txtRow" />
+                  <Label text="Column" />
+                  <TextField fx:id="txtColumn" prefHeight="25.0" prefWidth="97.0" />
+                  <Label text="New Color to Apply">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Label>
+                  <ColorPicker fx:id="colorPicker" onAction="#colorPickerClick" />
+                  <Label />
+                  <Button fx:id="btnChangeColor" mnemonicParsing="false" onAction="#btnChangeColorClick" prefHeight="25.0" prefWidth="125.0" text="Apply New Color">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin></Button>
+                  <Label fx:id="lblTotalChangesCaption" text="Total Changes Applied" visible="false">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lblTotalChanges" prefHeight="17.0" prefWidth="117.0" visible="false">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="20.0" right="10.0" top="20.0" />
+               </padding>
+            </VBox>
+         </left></BorderPane>
+   </children>
+</AnchorPane>
